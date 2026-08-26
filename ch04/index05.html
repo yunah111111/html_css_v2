@@ -1,0 +1,122 @@
+<!-- 4단계 세부 조정 -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* 1단계 리셋 + 전역 스타일 설정 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100vw;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+      }
+
+      /* 2단계 레이아웃 (큰 틀 배치) */
+      header {
+        text-align: center;
+        /* 위아래 25, 좌우 20 */
+        padding: 25px 20px;
+
+        background-color: #6f4e37;
+        color: white;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2px;
+      }
+
+      .menu-grid {
+        display: flex;
+        gap: 20px;
+      }
+
+      /* 3단계 컴포넌트 스타일 */
+      .card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+
+        /* 세부 조정 */
+        /* transform 변화를 0.2초에 걸쳐 적용 */
+        transition: transform 0.2;
+      }
+
+      .card img {
+        width: 100%;
+        /* img 기본값은 inline -> 텍스트 취급으로 보기 때문에 
+        아래 3~4px 공백 자동 발생 됨 
+        block으로 바꾸면 공백이 사라지고 card-body에 딱 붙음*/
+        display: block;
+      }
+
+      .card-body {
+        padding: 16px;
+      }
+
+      .price {
+        /* span 기본은 inline이다 그래서 margin-top 값이 무시 됨 */
+        /* inline-block은 옆에 붙으면서 margin-top도 동작함 */
+        display: inline-block;
+        margin-top: 10px;
+        color: #6f4e37;
+        font-size: 13px;
+      }
+
+      /* 4단계 세부 조정 */
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Brew & Bean</h1>
+      <p>당신의 하루를 깨우는 한 잔</p>
+    </header>
+
+    <main>
+      <div class="menu-grid">
+        <div class="card">
+          <img src="http://picsum.photos/id/30/300/200" alt="커피이미지" />
+          <div class="card-body">
+            <h3 class="menu-name">아메리카노</h3>
+            <p class="menu-desc">깔끔하고 진한 에스프레소</p>
+            <span class="price">4,500원</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="http://picsum.photos/id/30/300/200" alt="커피이미지" />
+          <div class="card-body">
+            <h3 class="menu-name">아메리카노</h3>
+            <p class="menu-desc">깔끔하고 진한 에스프레소</p>
+            <span class="price">4,500원</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="http://picsum.photos/id/30/300/200" alt="커피이미지" />
+          <div class="card-body">
+            <h3 class="menu-name">아메리카노</h3>
+            <p class="menu-desc">깔끔하고 진한 에스프레소</p>
+            <span class="price">4,500원</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
