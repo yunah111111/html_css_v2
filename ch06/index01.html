@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃 7가지 패턴t</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      /* 패턴 1 */
+      .demo-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box {
+        background-color: #5045e6;
+        padding: 20px 40px;
+        border-radius: 8px;
+        margin-top: 20px;
+        color: #fff;
+      }
+
+      /* 패턴 2 */
+      .demo-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 60px;
+
+        background-color: #1e293c;
+        color: white;
+        margin: 20px 0;
+      }
+
+      .demo-nav a {
+        text-decoration: none;
+        color: #787e91;
+        margin-left: 20px;
+      }
+
+      /* 패턴 3 */
+      .demo-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        background-color: #f9fbfc;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        flex: 1 1 200px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+      }
+      /* 패턴 4 */
+      .demo-sidebar-layout {
+        display: flex;
+        min-height: 200px;
+        margin-bottom: 20px;
+      }
+
+      .sidebar {
+        width: 200px;
+        background-color: #1e293c;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .content {
+        /* flex: 1 -> 나머지 여백 다 차지하라는 뜻 */
+        flex: 1;
+        background-color: #f1f5f9;
+        padding: 20px;
+      }
+
+      /* 패턴 5 */
+      .demo-hero {
+        height: 300px;
+        background: url("https://picsum.photos/seed/hero370/1200/300") center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      /* 패턴 6 */
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-wrapper {
+        flex: 1;
+        min-height: 100vh;
+      }
+
+      footer {
+        padding: 20px;
+        background-color: #1e293c;
+        color: #fff;
+        text-align: center;
+      }
+
+      /* 패턴 7: 반응형 */
+      .demo-responsive {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .col {
+        flex: 1;
+        background-color: #d8d0ba;
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .demo-responsive {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 6. 스티키 푸터 -->
+    <div class="content-wrapper">
+      <!-- 패턴 1: 완전 가운데 정렬 -->
+      <div class="demo-center">
+        <div class="box">패턴 1: 완전 가운데</div>
+      </div>
+
+      <!-- 패턴 2: 네비게이션 바 -->
+      <nav class="demo-nav">
+        <span>Logo</span>
+        <div>
+          <a href="">메뉴1</a>
+          <a href="">메뉴2</a>
+          <a href="">메뉴3</a>
+        </div>
+      </nav>
+
+      <!-- 패턴 3: 카드 그리드 -->
+      <section class="demo-grid">
+        <div class="card">카드 1</div>
+        <div class="card">카드 2</div>
+        <div class="card">카드 3</div>
+        <div class="card">카드 4</div>
+      </section>
+
+      <!-- 패턴 4: 사이드바 + 메인 -->
+      <div class="demo-sidebar-layout">
+        <aside class="sidebar">사이드바</aside>
+        <div class="content">메인 콘텐츠</div>
+      </div>
+
+      <!-- 패턴 5: 히어로 섹션 -->
+      <div class="demo-hero">
+        <h2>히어로 섹션</h2>
+      </div>
+
+      <!-- 패턴 7: 반응형 2단에서 1단으로 -->
+      <div class="demo-responsive">
+        <div class="col">왼쪽</div>
+        <div class="col">오른쪽</div>
+      </div>
+    </div>
+
+    <!-- 패턴6: 스티키 푸터 -->
+    <footer>2026 CSS Layout Patterns...</footer>
+  </body>
+</html>
