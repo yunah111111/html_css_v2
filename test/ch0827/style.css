@@ -16,6 +16,16 @@ body {
   font-weight: bold;
 }
 
+#right-qr {
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+
+#right-bell {
+  cursor: pointer;
+}
+
 .header-left2 a {
   text-decoration: none;
   color: black;
@@ -32,13 +42,6 @@ body {
 
 .header-left3 a:hover {
   color: black;
-}
-
-.header-right a {
-  text-decoration: none;
-  color: black;
-  padding-left: 12px;
-  cursor: pointer;
 }
 
 .hero {
@@ -87,6 +90,26 @@ body {
   border: none;
   background-color: #0baefe;
   color: #fff;
+  cursor: pointer;
+}
+
+.hero3 button:hover {
+  background-color: #08577f;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: row;
+}
+
+#i-hero {
+  padding-left: 5px;
+  padding-top: 4px;
+  cursor: pointer;
+}
+
+.hero2 a:hover {
+  color: gray;
 }
 
 .ad {
@@ -100,6 +123,7 @@ body {
   align-items: self-start;
   padding: 15px 20px;
   flex-direction: column;
+  position: relative;
 }
 
 .ad p {
@@ -122,4 +146,55 @@ body {
 
 .green {
   color: #05b10a;
+}
+
+#lucky-box {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 500px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.list section {
+  width: 170px;
+  height: 170px;
+  background-color: #fff;
+  border-radius: 15px;
+  flex-shrink: 0;
+  margin: 25px 1px;
+  min-width: 150px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 50px;
+}
+
+.emoji img {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  bottom: 10px;
+  right: 15px;
+}
+
+.sec {
+  font-size: 17.8px;
+  color: gray;
+}
+
+.fin {
+  font-size: 17.8px;
+  font-weight: bold;
+  position: relative;
+  top: 5px;
 }
