@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub 프로필 페이지</title>
+    <link rel="" href="./style.css" />
+    <style>
+      :root {
+        --gh-dark: #0d1116;
+        --gh-card: #161c23;
+        --gh-blue: #58a6ff;
+        --gh-border: #30363d;
+        --gh-text: #c9d1d9;
+        --grass-level-0: #161c23;
+        --grass-level-1: #3ad154;
+        --grass-level-2: #0e4429;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--gh-dark);
+        color: var(--gh-text);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* 컴포넌트 - 헤더 */
+      .gh-header {
+        display: flex;
+        align-items: center;
+        padding: 20px 15px;
+        gap: 20px;
+        background-color: var(--gh-card);
+        border-bottom: 1px solid var(--gh-border);
+      }
+
+      .gh-logo {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .gh-search {
+        background-color: var(--gh-dark);
+        border: 1px solid var(--gh-border);
+        counter-reset: white;
+        border-radius: 3px;
+        height: 30px;
+        width: 400px;
+      }
+
+      /* 컴포넌트 -프로필 레이아웃 (2단 구조) */
+      .profile-layout {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 24px;
+      }
+
+      /* 2단 구조 잡기 사이드바(고정) + 메인 컨텐츠 */
+      .sidebar {
+        flex: 0 0 300;
+      }
+
+      .main-content {
+        flex: 1;
+      }
+
+      /* 컴포넌트 스타일 - 사이드바 */
+      .avatar {
+        width: 80%;
+        border-radius: 50%;
+        border: 1px solid var(--gh-border);
+        /* 이미지 속성을 block 변경 */
+        display: block;
+      }
+
+      .sidebar h2 {
+        font-size: 24px;
+        margin-top: 15px;
+        color: white;
+      }
+
+      .username {
+        color: var(--gh-blue);
+        font-size: 16px;
+        margin-top: 6px;
+      }
+
+      .biography {
+        margin: 12px 0;
+        /* 줄 간격 (여러 줄 텍스트들이 있을 때 가독성을 위해 사용함) */
+        line-height: 1.5;
+        font-size: 15px;
+      }
+
+      .follow-info {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .follow-info strong {
+        color: white;
+      }
+
+      .skills-bedge {
+        /* span은 inline 기본 속성이라서 상하 패딩이 제대로 안 먹힌다. */
+        display: inline-block;
+        padding: 4px 10px;
+        font-size: 12px;
+        border-radius: 20px;
+      }
+
+      .skills-bedge.html {
+        /* 공백 없이 붙여쓰면 and 조건 */
+        background-color: #e34f26;
+        color: white;
+      }
+
+      .skills-bedge.css {
+        background-color: #1582b6;
+        color: white;
+      }
+
+      .skills-bedge.js {
+        background-color: #f7df1e;
+        color: black;
+      }
+
+      /* 컴포넌트 - 메인 영역 */
+      .main-content h3 {
+        /* 상 오른쪽 아래 왼쪽 */
+        margin: 20px 0 10px;
+        color: white;
+        font-size: 20px;
+      }
+
+      .grass-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+        margin: 15px 0;
+        max-width: 87px;
+      }
+
+      .grass {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      .level-0 {
+        background: var(--grass-level-0);
+      }
+
+      .level-1 {
+        background: var(--grass-level-1);
+      }
+
+      .level-2 {
+        background: var(--grass-level-2);
+      }
+
+      .repo-card {
+        border: 1px solid var(--gh-border);
+        padding: 16px;
+        border-radius: 6px;
+        margin-bottom: 12px;
+      }
+
+      /* 상세 조정 (도전 과제) */
+
+      /* 반응형 처리 */
+      @media (max-width: 768px) {
+        .profile-layout {
+          flex-direction: column;
+        }
+
+        .avatar {
+          max-width: 200px;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="gh-header">
+      <span class="gh-logo">GitHub</span>
+      <input class="gh-search" type="text" placeholder="Search" />
+    </header>
+    <main>
+      <div class="profile-layout">
+        <!-- 사이드바 시작 -->
+        <aside class="sidebar">
+          <img class="avatar" src="https://picsum.photos/seed/profile2222222/200/200" alt="" />
+          <h2>Kim-coding</h2>
+          <p class="username">@kim-coding</p>
+          <p class="biography">풀스텍 개발자를 꿈꾸며 매일 커밋합니다.</p>
+          <p class="follow-info"><strong>42</strong> followers · <strong>18</strong> following</p>
+          <div class="skills">
+            <span class="skills-bedge html">HTML</span>
+            <span class="skills-bedge css">CSS</span>
+            <span class="skills-bedge js">JavaScript</span>
+          </div>
+        </aside>
+        <!-- 메인 컨텐츠 시작 -->
+        <section class="main-content">
+          <h3>잔디밭 (Contribution Graph)</h3>
+          <div class="grass-grid">
+            <!-- 라인 1 -->
+            <div class="grass level-0"></div>
+            <div class="grass level-1"></div>
+            <div class="grass level-2"></div>
+            <div class="grass level-1"></div>
+            <div class="grass level-0"></div>
+            <div class="grass level-2"></div>
+
+            <!-- 라인 2 -->
+            <div class="grass level-2"></div>
+            <div class="grass level-0"></div>
+            <div class="grass level-1"></div>
+            <div class="grass level-2"></div>
+            <div class="grass level-1"></div>
+            <div class="grass level-0"></div>
+          </div>
+
+          <h3>저장소 (Repositories)</h3>
+          <div class="repo-card">
+            <h4><a href="#">html-css-clone</a></h4>
+            <p>HTML/CSS 클론 코딩 프로젝트</p>
+            <p class="repo-meta"><span class="lang-dot html-dot">●</span> HTML <span>별 112</span></p>
+          </div>
+
+          <div class="repo-card">
+            <h4><a href="#">todo-app</a></h4>
+            <p>할 일 관리 앱</p>
+            <p class="repo-meta"><span class="lang-dot html-dot2">●</span> JavaScript <span>별 8</span></p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
